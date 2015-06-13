@@ -1,31 +1,31 @@
 /**
 
-@mainpage QZeitgeist API Reference
+@mainpage QZeitgeist5 API Reference
 
 @section intro Introduction
 
-QZeitgeist provides a Qt-based API for interacting with the Zeitgeist daemon.
+QZeitgeist5 provides a Qt5-based API for interacting with the Zeitgeist daemon.
 
 If you are unfamiliar with Zeitgeist, please check out the project's website:
 
 http://zeitgeist-project.com
 
-@section linking Using QZeitgeist in your project
+@section linking Using QZeitgeist5 in your project
 
-QZeitgeist installs three options for using it in your project:
+QZeitgeist5 installs three options for using it in your project:
 
 @subsection cmake_exports CMake Exports
 @verbatim
-find_package(QZeitgeist)
+find_package(QZeitgeist5)
 
 add_executable(some-binary main.cpp)
-target_link_libraries(some-binary qzeitgeist)
+target_link_libraries(some-binary qzeitgeist5)
 @endverbatim
 
 @subsection cmake Old-fashioned CMake
 
 @verbatim
-find_package(QZeitgeist)
+find_package(QZeitgeist5)
 
 add_executable(some-binary main.cpp)
 target_link_libraries(some-binary ${QZEITGEIST_LIBS})
@@ -34,7 +34,7 @@ target_link_libraries(some-binary ${QZEITGEIST_LIBS})
 @subsection pkgconfig pkgconfig
 
 @verbatim
-gcc main.cpp `pkg-config --cflags --ldflags QZeitgeist`
+gcc main.cpp `pkg-config --cflags --ldflags QZeitgeist5`
 @endverbatim
 
 @section demos Demos
@@ -43,8 +43,8 @@ There are a number of demos available. Please check the <a href="demos.html">dem
 
 @section dependencies Dependencies
 
-Since QZeitgeist communicates with Zeitgeist entirely over DBus, the only
-runtime dependency is Qt. Of course, QZeitgeist is entirely unhelpful without
+Since QZeitgeist5 communicates with Zeitgeist entirely over DBus, the only
+runtime dependency is Qt. Of course, QZeitgeist5 is entirely unhelpful without
 Zeitgeist installed.
 
 To build, you will need the Zeitgeist python bindings, which is used to
@@ -66,7 +66,7 @@ This demo queries Zeitgeist for the last 10 events that were logged.
 
 */
 
-// DOXYGEN_NAME = libqzeitgeist
+// DOXYGEN_NAME = libqzeitgeist5
 // DOXYGEN_ENABLE = YES
 // DOXYGEN_SET_INPUT = @topdir@/src @topdir@/declarative @topdir@/Mainpage.dox
 // DOXYGEN_SET_FILE_PATTERNS = *.h *.dox

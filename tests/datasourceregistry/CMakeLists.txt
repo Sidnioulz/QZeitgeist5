@@ -15,7 +15,7 @@ set(test-dsr_HDRS
 #QT5_AUTOMOC(${test-dsr_SRCS})
 
 add_executable(test-dsr ${test-dsr_SRCS} ${test-dsr_MOC_SRCS})
-target_link_libraries(test-dsr qzeitgeist ${QT_LIBRARIES})
+target_link_libraries(test-dsr qzeitgeist5 ${QT_LIBRARIES})
 
 qt5_use_modules(test-dsr Core DBus Test Declarative)
 

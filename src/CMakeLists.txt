@@ -60,16 +60,13 @@ set(zeitgeist_DBUS_XML
 )
 
 set_source_files_properties(${zeitgeist_DBUS_XML} PROPERTIES INCLUDE QZeitgeist/QZeitgeist)
-#qt5_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Log.xml log.h QZeitgeist::Log)
 QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Log.xml loginterface)
-#qt5_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Blacklist.xml ?????.h QZeitgeist::Blacklist)
 QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Blacklist.xml blacklistinterface)
-#qt5_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.DataSourceRegistry.xml datasourceregistry.h QZeitgeist::DataSourceRegistry)
 QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.DataSourceRegistry.xml datasourceregistryinterface)
 
 qt5_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Monitor.xml monitor_p.h QZeitgeist::MonitorPrivate)
 
-add_library(qzeitgeist SHARED ${qzeitgeist_SRCS} interpretation.h manifestation.h)
+add_library(qzeitgeist5 SHARED ${qzeitgeist_SRCS} interpretation.h manifestation.h)
 
 add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/interpretation.h
    COMMAND ${CMAKE_SOURCE_DIR}/scripts/onto2cpp.py -o Interpretation > ${CMAKE_CURRENT_BINARY_DIR}/interpretation.h
@@ -78,16 +75,16 @@ add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/interpretation.h
 add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/manifestation.h
    COMMAND ${CMAKE_SOURCE_DIR}/scripts/onto2cpp.py -o Manifestation > ${CMAKE_CURRENT_BINARY_DIR}/manifestation.h
                    )
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifestation.h ${CMAKE_CURRENT_BINARY_DIR}/interpretation.h DESTINATION include/QZeitgeist)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/manifestation.h ${CMAKE_CURRENT_BINARY_DIR}/interpretation.h DESTINATION include/QZeitgeist5)
 
-target_link_libraries(qzeitgeist ${QT_QTDBUS_LIBRARIES} ${QT_QTGUI_LIBRARIES} ${QDBUS_LDFLAGS})
-set_target_properties(qzeitgeist PROPERTIES VERSION "${QZEITGEIST_VERSION}"
+target_link_libraries(qzeitgeist5 ${QT_QTDBUS_LIBRARIES} ${QT_QTGUI_LIBRARIES} ${QDBUS_LDFLAGS})
+set_target_properties(qzeitgeist5 PROPERTIES VERSION "${QZEITGEIST_VERSION}"
                       VERSION ${QZEITGEIST_VERSION}
                       SOVERSION ${QZEITGEIST_LIB_SOVERSION}
                       )
 
-install(TARGETS qzeitgeist EXPORT QZeitgeistExport DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
-qt5_use_modules(qzeitgeist Core DBus Test Declarative Widgets)
+install(TARGETS qzeitgeist5 EXPORT QZeitgeistExport DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
+qt5_use_modules(qzeitgeist5 Core DBus Test Declarative Widgets)
 
-install(FILES ${qzeitgeist_HEADERS} DESTINATION include/QZeitgeist)
-install(FILES ${qzeitgeist_MODEL_HEADERS} DESTINATION include/QZeitgeist/DataModel)
+install(FILES ${qzeitgeist_HEADERS} DESTINATION include/QZeitgeist5)
+install(FILES ${qzeitgeist_MODEL_HEADERS} DESTINATION include/QZeitgeist5/DataModel)

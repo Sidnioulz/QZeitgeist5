@@ -9,5 +9,5 @@ add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/html/index.html
 
 add_custom_target(docs ALL DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/html/index.html)
 
-install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/html/" DESTINATION "${SHARE_INSTALL_PREFIX}/doc/libqzeitgeist/")
-install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/qch/" DESTINATION "${SHARE_INSTALL_PREFIX}/doc/libqzeitgeist/")
+install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/html/" DESTINATION "${SHARE_INSTALL_PREFIX}/doc/libqzeitgeist5/")
+install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/qch/" DESTINATION "${SHARE_INSTALL_PREFIX}/doc/libqzeitgeist5/")

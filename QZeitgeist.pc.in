@@ -3,9 +3,9 @@ exec_prefix=${CMAKE_INSTALL_PREFIX}
 libdir=${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}
 includedir=${CMAKE_INSTALL_PREFIX}/include
 
-Name: QZeitgeist
-Description: Qt Zeitgeist library
+Name: QZeitgeist5
+Description: Qt5 Zeitgeist library
 Version: ${CPACK_PACKAGE_VERSION}
 Requires: QtCore QtDBus
-Libs: -L${libdir} -lQZeitgeist
+Libs: -L${libdir} -lQZeitgeist5
 Cflags: -I${CMAKE_INSTALL_PREFIX}/include/
