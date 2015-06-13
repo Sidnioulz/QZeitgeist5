@@ -18,6 +18,7 @@ class LogModel : public QZeitgeist::LogModel, public QDeclarativeParserStatus
     Q_PROPERTY(QZeitgeist::Declarative::Event* templateEvent READ templateEvent WRITE setTemplateEvent NOTIFY templateEventChanged);
     public:
         LogModel(QObject *parent = 0);
+        QHash<int, QByteArray> roleNames() const;
         QVariant data(const QModelIndex &idx, int role = Qt::DisplayRole) const;
         QZeitgeist::Declarative::Event *templateEvent() const;
         void setTemplateEvent(QZeitgeist::Declarative::Event *evt);

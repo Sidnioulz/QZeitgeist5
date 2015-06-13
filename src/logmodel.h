@@ -56,6 +56,7 @@ class QZEITGEIST_EXPORT LogModel : public QAbstractItemModel {
         };
         LogModel(QObject *parent = 0);
         virtual ~LogModel();
+        QHash<int, QByteArray> roleNames() const;
         int rowCount(const QModelIndex &idx = QModelIndex()) const;
         int columnCount(const QModelIndex &idx = QModelIndex()) const;
         QVariant data(const QModelIndex &idx, int role = Qt::DisplayRole) const;

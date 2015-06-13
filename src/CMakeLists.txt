@@ -4,8 +4,7 @@ if (__HAVE_GCC_VISIBILITY AND NOT WIN32)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fvisibility=hidden")
 endif (__HAVE_GCC_VISIBILITY AND NOT WIN32)
 
-find_package(Automoc4)
-include(${QT_USE_FILE})
+#include(${QT_USE_FILE})
 include(QZeitgeistMacros)
 
 execute_process(COMMAND python -c "import zeitgeist.datamodel" RESULT_VARIABLE ZEITGEIST_FIND_RESULT)
@@ -61,13 +60,16 @@ set(zeitgeist_DBUS_XML
 )
 
 set_source_files_properties(${zeitgeist_DBUS_XML} PROPERTIES INCLUDE QZeitgeist/QZeitgeist)
-zg_add_dbus_interface(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Log.xml loginterface)
-zg_add_dbus_interface(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Blacklist.xml blacklistinterface)
-zg_add_dbus_interface(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.DataSourceRegistry.xml datasourceregistryinterface)
+#qt5_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Log.xml log.h QZeitgeist::Log)
+QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Log.xml loginterface)
+#qt5_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Blacklist.xml ?????.h QZeitgeist::Blacklist)
+QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Blacklist.xml blacklistinterface)
+#qt5_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.DataSourceRegistry.xml datasourceregistry.h QZeitgeist::DataSourceRegistry)
+QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.DataSourceRegistry.xml datasourceregistryinterface)
 
-qt4_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Monitor.xml monitor_p.h QZeitgeist::MonitorPrivate)
+qt5_add_dbus_adaptor(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Monitor.xml monitor_p.h QZeitgeist::MonitorPrivate)
 
-automoc4_add_library(qzeitgeist SHARED ${qzeitgeist_SRCS} interpretation.h manifestation.h)
+add_library(qzeitgeist SHARED ${qzeitgeist_SRCS} interpretation.h manifestation.h)
 
 add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/interpretation.h
    COMMAND ${CMAKE_SOURCE_DIR}/scripts/onto2cpp.py -o Interpretation > ${CMAKE_CURRENT_BINARY_DIR}/interpretation.h
@@ -85,6 +87,7 @@ set_target_properties(qzeitgeist PROPERTIES VERSION "${QZEITGEIST_VERSION}"
                       )
 
 install(TARGETS qzeitgeist EXPORT QZeitgeistExport DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX})
+qt5_use_modules(qzeitgeist Core DBus Test Declarative Widgets)
 
 install(FILES ${qzeitgeist_HEADERS} DESTINATION include/QZeitgeist)
 install(FILES ${qzeitgeist_MODEL_HEADERS} DESTINATION include/QZeitgeist/DataModel)

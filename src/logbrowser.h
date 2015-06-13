@@ -20,7 +20,7 @@
 #ifndef LOGBROWSER_H
 #define LOGBROWSER_H
 
-#include <QtGui/QWidget>
+#include <QtWidgets/QWidget>
 #include "DataModel/event.h"
 
 class QAbstractButton;

@@ -6,11 +6,14 @@ cmake_minimum_required(VERSION 2.6)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules)
 set(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)" )
 
-find_package(Qt4 4.7.0 COMPONENTS QtCore QtDBus QtTest QtDeclarative REQUIRED)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
+set(CMAKE_AUTOMOC ON)
+
+find_package(Qt5 5.4.0 COMPONENTS Core DBus Test Declarative Widgets WebKit WebKitWidgets REQUIRED)
 
 set(QZEITGEIST_VERSION_MAJOR 0)
-set(QZEITGEIST_VERSION_MINOR 8)
+set(QZEITGEIST_VERSION_MINOR 9)
 set(QZEITGEIST_VERSION_PATCH 0)
 set(QZEITGEIST_LIB_SOVERSION 1)
 set(QZEITGEIST_VERSION "${QZEITGEIST_VERSION_MAJOR}.${QZEITGEIST_VERSION_MINOR}.${QZEITGEIST_VERSION_PATCH}")
@@ -31,7 +34,7 @@ if(QZEITGEIST_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT)
     set(QZEITGEIST_QT_IMPORTS_INSTALL_DIR ${QT_IMPORTS_DIR} CACHE PATH "The directory where QZeitgeist Qt imports (QML) will be installed to." FORCE)
 else(QZEITGEIST_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT)
     # in this case, the values can be adjusted by the user e.g. via cmake-gui, so no FORCE
-    set(QZEITGEIST_QT_IMPORTS_INSTALL_DIR lib${LIB_SUFFIX}/qt4/imports CACHE PATH "The directory where QZeitgeist Qt imports (QML) will be installed to.")
+    set(QZEITGEIST_QT_IMPORTS_INSTALL_DIR lib${LIB_SUFFIX}/qt5/imports CACHE PATH "The directory where QZeitgeist Qt imports (QML) will be installed to.")
 endif(QZEITGEIST_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT)
 
 set(CPACK_PACKAGE_VERSION_MAJOR ${QZEITGEIST_VERSION_MAJOR})

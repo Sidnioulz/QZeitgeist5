@@ -31,6 +31,8 @@ namespace Declarative
 
 class Plugin : public QDeclarativeExtensionPlugin {
     Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.gnome.zeitgeist.QZeitgeistDeclarativePlugin")
+
 public:
     Plugin(QObject *parent = 0);
     void registerTypes(const char *uri);
@@ -38,7 +40,5 @@ public:
 
 } // namespace Declarative
 } // namespace QZeitgeist
-
-Q_EXPORT_PLUGIN2(qzeitgeistdeclarativeplugin, QZeitgeist::Declarative::Plugin);
 
 #endif // PLUGIN_H

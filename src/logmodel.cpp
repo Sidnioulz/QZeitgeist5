@@ -22,7 +22,7 @@
 
 #include "DataModel/subject.h"
 
-#include <QtGui/QFileIconProvider>
+#include <QtWidgets/QFileIconProvider>
 #include <QtCore/QDebug>
 #include <QtCore/QUrl>
 #include <QtCore/QDir>
@@ -46,6 +46,25 @@ LogModel::LogModel(QObject *parent)
 
 LogModel::~LogModel()
 {
+}
+
+QHash<int, QByteArray> LogModel::roleNames() const
+{
+    QHash<int, QByteArray> roles;
+    roles.insert(Qt::DisplayRole, QByteArray("display"));
+    roles.insert(Qt::DecorationRole, QByteArray("decoration"));
+    roles.insert(Qt::EditRole, QByteArray("edit"));
+    roles.insert(Qt::ToolTipRole, QByteArray("toolTip"));
+    roles.insert(Qt::StatusTipRole, QByteArray("statusTip"));
+    roles.insert(Qt::WhatsThisRole, QByteArray("whatsThis"));
+    roles.insert(EventRole, QByteArray("event"));
+    roles.insert(TimeRole, QByteArray("time"));
+    roles.insert(IDRole, QByteArray("id"));
+    roles.insert(URLRole, QByteArray("url"));
+    roles.insert(MimeRole, QByteArray("mime"));
+    roles.insert(ActorRole, QByteArray("actor"));
+    roles.insert(ThumbnailRole, QByteArray("thumbnail"));
+    return roles;
 }
 
 void LogModel::setIconMode(IconMode mode)

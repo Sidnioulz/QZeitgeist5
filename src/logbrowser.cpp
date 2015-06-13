@@ -22,15 +22,15 @@
 #include "logmodel.h"
 #include "interpretation.h"
 
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QListView>
-#include <QtGui/QAction>
-#include <QtGui/QRadioButton>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QListView>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QRadioButton>
 #include <QtCore/QSignalMapper>
-#include <QtGui/QCheckBox>
-#include <QtGui/QSortFilterProxyModel>
-#include <QtGui/QLineEdit>
+#include <QtWidgets/QCheckBox>
+#include <QtCore/QSortFilterProxyModel>
+#include <QtWidgets/QLineEdit>
 
 #include <QtCore/QDebug>
 

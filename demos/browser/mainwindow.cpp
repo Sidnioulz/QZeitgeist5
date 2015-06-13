@@ -1,9 +1,9 @@
 #include "mainwindow.h"
-#include <QtWebKit/QWebView>
+#include <QtWebKitWidgets/QWebView>
 #include <QtCore/QDebug>
-#include <QtGui/QMenuBar>
-#include <QtGui/QListView>
-#include <QtGui/QDockWidget>
+#include <QtWidgets/QMenuBar>
+#include <QtWidgets/QListView>
+#include <QtWidgets/QDockWidget>
 
 #include <QZeitgeist/Log>
 #include <QZeitgeist/Manifestation>

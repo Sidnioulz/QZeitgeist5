@@ -27,7 +27,7 @@ MACRO(ZG_ADD_DBUS_INTERFACE _sources _interface _basename)
 
   SET_SOURCE_FILES_PROPERTIES(${_impl} PROPERTIES SKIP_AUTOMOC TRUE)
 
-  QT4_GENERATE_MOC(${_header} ${_moc})
+  QT5_GENERATE_MOC(${_header} ${_moc})
 
   SET(${_sources} ${${_sources}} ${_impl} ${_header} ${_moc})
   MACRO_ADD_FILE_DEPENDENCIES(${_impl} ${_moc})

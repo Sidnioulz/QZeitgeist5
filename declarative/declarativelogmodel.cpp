@@ -11,7 +11,13 @@ LogModel::LogModel(QObject *parent)
 {
     QHash<int, QByteArray> roles;
     roles[EventRole] = "event";
-    setRoleNames(roles);
+}
+
+QHash<int, QByteArray> LogModel::roleNames() const
+{
+    QHash<int, QByteArray> roles = QZeitgeist::LogModel::roleNames();
+    roles.insert(EventRole, QByteArray("event"));
+    return roles;
 }
 
 QVariant LogModel::data(const QModelIndex &idx, int role) const

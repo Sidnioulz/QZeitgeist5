@@ -26,6 +26,7 @@
 #include <QList>
 
 #include <QMetaType>
+#include <QString>
 
 namespace QZeitgeist
 {
