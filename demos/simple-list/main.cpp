@@ -1,4 +1,4 @@
-#include <QZeitgeist/Log>
+#include <QZeitgeist5/Log>
 #include <QtCore/QTextStream>
 #include <stdio.h>
 

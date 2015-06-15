@@ -5,10 +5,10 @@
 #include <QtWidgets/QListView>
 #include <QtWidgets/QDockWidget>
 
-#include <QZeitgeist/Log>
-#include <QZeitgeist/Manifestation>
-#include <QZeitgeist/Interpretation>
-#include <QZeitgeist/LogBrowser>
+#include <QZeitgeist5/Log>
+#include <QZeitgeist5/Manifestation>
+#include <QZeitgeist5/Interpretation>
+#include <QZeitgeist5/LogBrowser>
 
 MainWindow::MainWindow(QWidget *parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags)
