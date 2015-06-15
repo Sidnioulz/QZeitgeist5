@@ -1,0 +1,10 @@
+Package: libqzeitgeist5
+Version: 0.8.0-0
+Architecture: amd64
+Maintainer: Steve Dodier-Lazaro <sidnioulz@gmail.com>
+Installed-Size: 27
+Section: libs
+Priority: optional
+Homepage: https://github.com/Sidnioulz/QZeitgeist5
+Description: A Qt5 version of the Zeitgeist Qt bindings
+ A Qt5 version of the Zeitgeist Framework bindings for Qt.

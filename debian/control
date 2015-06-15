@@ -1,0 +1,27 @@
+Source: libqzeitgeist5
+Priority: optional
+Maintainer: Steve Dodier-Lazaro <sidnioulz@gmail.com>
+Build-Depends: debhelper (>= 9),
+               cmake,
+               libqt5webkit5-dev,              
+               qtquick1-5-dev,
+               qtscript5-dev,
+               libzeitgeist-2.0-dev
+Standards-Version: 3.9.6
+Section: libs
+Homepage: https://github.com/Sidnioulz/QZeitgeist5
+Vcs-Git: git@github.com:Sidnioulz/QZeitgeist5.git
+Vcs-Browser: https://github.com/Sidnioulz/QZeitgeist5
+
+Package: libqzeitgeist5-dev
+Section: libdevel
+Architecture: any
+Depends: libqzeitgeist5 (= ${binary:Version}), ${misc:Depends}
+Description: A Qt5 version of the Zeitgeist Qt bindings
+ A Qt5 version of the Zeitgeist Framework bindings for Qt.
+
+Package: libqzeitgeist5
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A Qt5 version of the Zeitgeist Qt bindings
+ A Qt5 version of the Zeitgeist Framework bindings for Qt.

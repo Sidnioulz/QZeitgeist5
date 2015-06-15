@@ -1,0 +1,8 @@
+include(/usr/lib/cmake/QZeitgeist5/QZeitgeistExport.cmake)
+set(QZEITGEIST_LIBRARY qzeitgeist5)
+set(QZEITGEIST_INCLUDE_DIR /usr/include/)
+set(QZEITGEIST_FOUND TRUE)
+set(QZEITGEIST_VERSION_MAJOR 0)
+set(QZEITGEIST_VERSION_MINOR 8)
+set(QZEITGEIST_VERSION_PATCH 0)
+set(QZEITGEIST_VERSION 0.8.0)
