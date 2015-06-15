@@ -54,6 +54,7 @@ TimeRange::TimeRange(const TimeRange & source)
     : d(new TimeRangePrivate())
 {
     Q_ASSERT(d);
+    qDBusRegisterMetaType<QZeitgeist::DataModel::TimeRange>();
 
     // Copy the source attribute's value.
     d->begin = source.d->begin;
@@ -63,6 +64,7 @@ TimeRange::TimeRange(const TimeRange & source)
 TimeRange::TimeRange(qint64 begin, qint64 end)
     : d(new TimeRangePrivate(begin, end))
 {
+    qDBusRegisterMetaType<QZeitgeist::DataModel::TimeRange>();
 }
 
 TimeRange::~TimeRange()

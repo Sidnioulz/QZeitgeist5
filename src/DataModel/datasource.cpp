@@ -58,6 +58,8 @@ DataSource::DataSource(const DataSource & source)
     : d(new DataSourcePrivate())
 {
     Q_ASSERT(d);
+    qDBusRegisterMetaType<QZeitgeist::DataModel::DataSource>();
+    qDBusRegisterMetaType<QZeitgeist::DataModel::DataSourceList>();
 
     // Copy the source attribute's value.
     d->uniqueId = source.d->uniqueId;

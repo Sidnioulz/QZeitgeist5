@@ -56,6 +56,9 @@ Event::Event()
     : d(new EventPrivate())
 {
     Q_ASSERT(d);
+    qDBusRegisterMetaType<QZeitgeist::DataModel::Event>();
+    qDBusRegisterMetaType<QZeitgeist::DataModel::EventList>();
+    qDBusRegisterMetaType<QZeitgeist::DataModel::EventIdList>();
     d->timestamp = QDateTime::currentDateTime();
 }
 
