@@ -1,5 +1,0 @@
-#include "qzeitgeist.h"
-#include "DataModel/Event"
-#include "DataModel/TimeRange"
-#include "DataModel/DataSource"
-#include "Log"
