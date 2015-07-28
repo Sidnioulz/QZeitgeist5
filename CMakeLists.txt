@@ -10,7 +10,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt5 5.4.0 COMPONENTS Core DBus Test Declarative Widgets WebKit WebKitWidgets REQUIRED)
+find_package(Qt5 5.2.0 COMPONENTS Core DBus Test Declarative Widgets WebKit WebKitWidgets REQUIRED)
 
 set(QZEITGEIST_VERSION_MAJOR 0)
 set(QZEITGEIST_VERSION_MINOR 8)
