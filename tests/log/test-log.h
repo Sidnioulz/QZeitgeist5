@@ -21,9 +21,9 @@
 #include <QTest>
 #include <QDebug>
 
-#include "QZeitgeist/QZeitgeist"
-#include "QZeitgeist/Log"
-#include "QZeitgeist/Monitor"
+#include "QZeitgeist5/QZeitgeist"
+#include "QZeitgeist5/Log"
+#include "QZeitgeist5/Monitor"
 
 class LogTest : public QObject
 {

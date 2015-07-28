@@ -1,4 +1,4 @@
-include(@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@/cmake/QZeitgeist/QZeitgeistExport.cmake)
+include(@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@/cmake/QZeitgeist5/QZeitgeistExport.cmake)
 set(QZEITGEIST_LIBRARY qzeitgeist5)
 set(QZEITGEIST_INCLUDE_DIR @CMAKE_INSTALL_PREFIX@/include/)
 set(QZEITGEIST_FOUND TRUE)

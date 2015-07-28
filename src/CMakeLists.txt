@@ -59,7 +59,7 @@ set(zeitgeist_DBUS_XML
     dbus-xml/org.gnome.zeitgeist.DataSourceRegistry.xml
 )
 
-set_source_files_properties(${zeitgeist_DBUS_XML} PROPERTIES INCLUDE QZeitgeist/QZeitgeist)
+set_source_files_properties(${zeitgeist_DBUS_XML} PROPERTIES INCLUDE QZeitgeist5/QZeitgeist)
 QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Log.xml loginterface)
 QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.Blacklist.xml blacklistinterface)
 QT5_ADD_DBUS_INTERFACE(qzeitgeist_SRCS dbus-xml/org.gnome.zeitgeist.DataSourceRegistry.xml datasourceregistryinterface)
