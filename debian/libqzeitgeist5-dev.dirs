@@ -1,2 +1,5 @@
 usr/lib
+usr/lib/cmake
+usr/lib/cmake/QZeitgeist5
+usr/lib/pkgconfig
 usr/include
