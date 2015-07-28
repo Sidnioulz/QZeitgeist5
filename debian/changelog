@@ -1,16 +1,28 @@
-libqzeitgeist5 (0.8.0-2) vivid; urgency=medium
+libqzeitgeist5 (0.8.1) trusty; urgency=medium
+
+  * New upstream release (bumped version number) to allow for new packages on Debian
+
+ -- Steve Dodier-Lazaro <sidnioulz@gmail.com>  Tue, 28 Jul 2015 14:00:01 +0100
+
+libqzeitgeist5 (0.8.0-4) trusty; urgency=medium
+
+  * Lowered Qt requirements
+
+ -- Steve Dodier-Lazaro <sidnioulz@gmail.com>  Tue, 28 Jul 2015 13:53:37 +0100
+
+libqzeitgeist5 (0.8.0-3) trusty; urgency=medium
 
   * Adding python-zeitgeist dependencies...
 
  -- Steve Dodier-Lazaro <sidnioulz@gmail.com>  Tue, 16 Jun 2015 01:28:50 +0100
 
-libqzeitgeist5 (0.8.0-1) vivid; urgency=medium
+libqzeitgeist5 (0.8.0-1) trusty; urgency=medium
 
   * Fixing an issue with python versioning in the ubuntu package
 
  -- Steve Dodier-Lazaro <sidnioulz@gmail.com>  Tue, 16 Jun 2015 01:18:14 +0100
 
-libqzeitgeist5 (0.8.0-0) vivid; urgency=low
+libqzeitgeist5 (0.8.0-0) trusty; urgency=low
 
   * Initial release
 
