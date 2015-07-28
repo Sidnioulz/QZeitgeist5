@@ -1,3 +1,9 @@
+libqzeitgeist5 (0.8.2) trusty; urgency=medium
+
+  * Modified rules for the development package
+
+ -- Steve Dodier-Lazaro <sidnioulz@gmail.com>  Tue, 28 Jul 2015 14:41:05 +0100
+
 libqzeitgeist5 (0.8.1) trusty; urgency=medium
 
   * New upstream release (bumped version number) to allow for new packages on Debian
